@@ -1,0 +1,9 @@
+*.sublime-*
+icons.md
+notes.md
+twentyfifteen/
+twentyfourteen/
+twentythirteen/
+index.php
+!/sage_contentmine.org/index.php
+
