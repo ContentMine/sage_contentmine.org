@@ -24,6 +24,11 @@ The theme is provided in the `/sage_contentmine.org/` folder. The theme is based
 | gulp >= 3.8.10  | `gulp -v`    | `npm install -g gulp` |
 | Bower >= 1.3.12 | `bower -v`   | `npm install -g bower` |
 
+#### Extensions
+**Fonts**
+- [League Spartan](https://www.theleagueofmoveabletype.com/league-spartan) 
+- [Font Awesome](http://fortawesome.github.io/Font-Awesome/) ([SIL OFL 1.1, CC BY 3.0 & MIT License](http://fortawesome.github.io/Font-Awesome/license/)) (SIL’s Open Font License)
+
 ### Plugins
 See the [plugins](PLUGINS.md) page for a list of all the plugins used.
 
@@ -45,6 +50,7 @@ On the server following software is installed:
 - svn
 - mysql
 - php
+- npm -> gulp, bower
 
 ## Contributing
 

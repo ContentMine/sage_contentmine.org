@@ -53,11 +53,16 @@ function display_sidebar() {
        */
       [
         'is_404',
-        'is_blog',
         'is_front_page',
+        'is_home',
+        'is_search',
         ['is_page', 'contact'],
         ['is_page', 'events'],
-        ['is_singular', 'event']
+        ['is_page_template', 'template-one-column.php'],
+        ['is_singular', 'page'],
+        ['is_singular', 'post'],
+        ['is_singular', 'event'],
+        ['is_tax', 'event-venue']
       ]
     );
 

@@ -8,6 +8,7 @@ Configuration of the wordpress installation and the used plugins.
 
 ### General
 - Site Title: ContentMine
+- tagline: The right to read is the right to mine!
 - Timezone: London
 
 ### Reading
@@ -49,12 +50,16 @@ Configuration of the wordpress installation and the used plugins.
 - Select which features events should support -> enable "Revisions"
 - Show past events: enable
 
+**Premissions**
+- 
+
 ### Zotero
 
 ### Link Checker
 **General**
 - Send me e-mail notifications about newly detected broken links -> disable
 - Send authors e-mail notifications about broken links in their posts -> enable
+- Link tweaks -> disable "Apply custom formatting to broken links | Edit CSS"
 
 **Look for links in**
 - Look for links in -> Events -> enable
@@ -74,6 +79,8 @@ Configuration of the wordpress installation and the used plugins.
 
 ### Antispam Bee 
 - Statistics on the dashboard -> enable
+- enable "Spam counter on the dashboard"
+- enable "Use a public antispam database"
 
 ### Mathjax Latex
 
@@ -94,13 +101,15 @@ Configuration of the wordpress installation and the used plugins.
 - Home Template (Unlinked) -> <span typeof="v:Breadcrumb"><span property="v:title">Home</span></span>
 
 **Post Types**
-- Event Root Page -> Events
 - Post Hierarchy Display -> disable
+- Event Root Page -> Events
 - Event Hierarchy Display -> disable
 
 **Post Types**
 - Posts: 
 	-  Post Hierarchie: Post Parent
+- Events:
+	- Event Archive Display -> disable "Show the breadcrumb for the event post type archives in the breadcrumb trail."
 
 ### Printfriendly
 - gray button 
@@ -110,8 +119,8 @@ Configuration of the wordpress installation and the used plugins.
 #### General Settings
 **Home Page Settings**
 - Home Title: ContentMine
-- Home Description: XXXXX
-- Home Keywords (comma separated): 
+- Home Description: The ContentMine uses machines to liberate 100.000.000 facts from the scientific literature.
+- Home Keywords (comma separated): Text Data Mining, Content Mining, Open Science, Open Access, Peter Murray-Rust, Shuttleworth Fellowship, 
 
 ### WP Security
 - enable "Hide WordPress version for all users but administrators"
@@ -165,6 +174,17 @@ Configuration of the wordpress installation and the used plugins.
 
 ### Custom Fields
 
+### Piwik
+- Piwik Mode: Self-hosted
+- Auto-config: disable
 
+**Enable Tracking**
+- Add tracking code: default tracking
+- add noscript: enable
+- enable content tracking: track all content blocks
+- track search: enable
+- track 404: enable
+- Tracking filter: Administrator, Editor, Author, Constributor, Subscriber
+- Track RSS Feed: enable
 
 

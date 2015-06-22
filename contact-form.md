@@ -2,7 +2,6 @@
 
 ## Form
 ```
-<div id="contact-form">
 <div class="col-md-8">
 <h4>Subject</h4>
     [text subject] 
@@ -14,27 +13,26 @@
 <h4>Your Email (required)</h4>
     [email* your-email]
 <h4>Reason</h4>
-[select* menu-87 "Question about ContentMine" "Report a problem with the website" "Request a new website feature" "Media inquiry" "Other"]
-<p>[submit "Send" class:btn class:btn-primary class:btn-large]</p>
-</div>
+[select* menu-87 "Report a problem with the ContentMine Software" "Report a problem with the website" "Media inquiry" "Other"]
+<p>[submit "Send" class:btn class:btn-primary class:btn-lg]</p>
 </div>
 ```
 
 ## Message body
 ```
-From: [your-name] <[your-email]>
-Subject: [your-subject]
+From: <[your-email]>
+Subject: [subject]
 
 Message Body:
-[your-message]
+[message]
 
 --
-This e-mail was sent from the contact form on ContentMine.org
+This e-mail was sent from a contact form on ContentMine.org
 ```
 
 ## Settings
-- To: ContentMine <@.>
-- From: ContentMine <@.>
-- Subject: [your-subject]
+- To: contact@contentmine.org
+- From: [ContentMine Website] <wordpress@contentmine.org>
+- Subject: [subject]
 - Additional headers: -> Reply-To: [your-email]
 

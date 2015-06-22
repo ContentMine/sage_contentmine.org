@@ -4,5 +4,6 @@ Renders shariff social share plugin buttons.
 */
 ?>
 
-<?php echo do_shortcode('[shariff]'); ?>
-	
+<div class="wrapper-shariff col-xs-12"> 
+	<?php echo do_shortcode('[shariff]'); ?>
+</div>

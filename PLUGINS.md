@@ -6,6 +6,7 @@
 - [breadcrumb-navxt](http://mtekk.us/code/breadcrumb-navxt/)
 - [broken-link-checker](http://w-shadow.com/blog/2007/08/05/broken-link-checker-for-wordpress/)
 - [contact-form-7](http://contactform7.com/)
+- [Crayon Syntax Highlighter](https://wordpress.org/plugins/crayon-syntax-highlighter/)
 - [event-organizer](http://www.wp-event-organiser.com/)
 - [leaflet-maps-marker](https://www.mapsmarker.com/)
 - [printfriendly](http://www.printfriendly.com/)

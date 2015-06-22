@@ -1,4 +1,5 @@
 <div class="container">
+	<?php get_template_part('templates/page', 'header'); ?>
 
 	<?php if (!have_posts()) : ?>
 	  <div class="alert alert-warning">
@@ -11,5 +12,5 @@
 	  <?php get_template_part('templates/content', 'preview'); ?>
 	<?php endwhile; ?>
 
-	<div class="btn btn-default nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div><div class="btn btn-default nav-next alignright"><?php previous_posts_link( 'Newer Posts' ); ?></div>
+	<?php the_posts_navigation(); ?>
 </div>

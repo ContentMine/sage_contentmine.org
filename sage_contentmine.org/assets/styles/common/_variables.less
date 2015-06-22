@@ -11,6 +11,7 @@
 // gradients
 @primary-dark:		#1E4A4F;
 @primary-light:		#8DC8CE;
+//@primary-light:		#92ce73; alte seite
 @secondary-dark:	#234411;
 @secondary-light:	#91CE71;
 
@@ -31,6 +32,7 @@
 @gray-lightest:          lighten(#000, 94%); // #eee
 @gray-blue: 			 #879492;
 @gray-blue-light:		 lighten(@gray-blue, 80%);
+@gray-background:		 #f6f6f6;
 
 // Typography
 // -------------------------
@@ -65,9 +67,9 @@
 @btn-default-bg:                 #fff;
 @btn-default-border:             #ccc;
 
-@btn-primary-color:              #fff;
-@btn-primary-bg:                 @brand-primary;
-@btn-primary-border:             darken(@btn-primary-bg, 5%);
+@btn-primary-color:              @brand-primary;
+@btn-primary-bg:                 #fff;
+@btn-primary-border:             @brand-primary;
 
 @btn-link-disabled-color:        @gray-light;
 
@@ -111,7 +113,7 @@
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 
 @navbar-default-color:             #777;
-@navbar-default-bg:                @brand-secondary;
+@navbar-default-bg:                @secondary-light;
 @navbar-default-border:            darken(@navbar-default-bg, 6.5%);
 
 // Navbar links
@@ -130,8 +132,8 @@
 
 // Navbar toggle
 @navbar-default-toggle-hover-bg:           #ddd;
-@navbar-default-toggle-icon-bar-bg:        #ccc;
-@navbar-default-toggle-border-color:       #ddd;
+@navbar-default-toggle-icon-bar-bg:        @brand-primary;
+@navbar-default-toggle-border-color:       @primary-dark;
 
 // Inverted navbar
 //
@@ -220,14 +222,6 @@
 @breadcrumb-active-color:     @gray-light;
 @breadcrumb-separator:        "/";
 
-// Code
-// ------------------------
-@code-color:                  #c7254e;
-@code-bg:                     #f9f2f4;
 
-@pre-bg:                      #f5f5f5;
-@pre-color:                   @gray-dark;
-@pre-border-color:            #ccc;
-@pre-scrollable-max-height:   340px;
 
 

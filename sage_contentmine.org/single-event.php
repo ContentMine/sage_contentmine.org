@@ -9,7 +9,7 @@ The template was taken from
 <div class="container">
 	<?php while (have_posts()) : the_post(); ?>
 		<article <?php post_class(); ?>>
-			<header class="row">
+			<header>
 				<h1 class="entry-title"><?php the_title(); ?></h1>
 				<div class="entry-meta eventorganiser-event-meta">
 					<!-- Choose a different date format depending on whether we want to include time -->
@@ -64,45 +64,6 @@ The template was taken from
 							<li><strong><?php _e('Event-Type','eventorganiser'); ?>:</strong> <?php echo get_the_term_list( get_the_ID(),'event-category', '', ', ', '' ); ?></li>
 						<?php } ?>
 
-						<!-- GitHub -->
-						<?php 
-							$github = get_post_meta($post->ID, 'ev_github_repo', single); 
-							if ($github) { ?>
-								<li><strong>GitHub:</strong> <?php echo 'In the <a href="' . $github . '" title="GitHub">GitHub repository</a> you get more information about the workshop.'; ?></li>
-							<?php }
-						?>
-
-						<!-- registration -->
-						<?php 
-							$eventbrite = get_post_meta($post->ID, 'ev_eventbrite_event', single); 
-							if ($eventbrite) { ?>
-								<li><strong>Registration:</strong> <?php echo '<a href="' . $eventbrite . '" title="Eventbrite">Eventbrite</a>'; ?></li>
-							<?php }
-						?>
-
-						<!-- etherpad -->
-						<?php 
-							$etherpad = get_post_meta($post->ID, 'ev_etherpad', single); 
-							if ($etherpad) { ?>
-								<li><strong>Etherpad:</strong> <?php echo 'On the workshop and also be<a href="' . $eventbrite . '" title="Eventbrite">Eventbrite</a>'; ?></li>
-							<?php }
-						?>
-
-						<!-- documentation -->
-						<?php 
-							$postBefore = get_post_meta($post->ID, 'ev_invitation_post', single); 
-							$docurls = get_post_meta($post->ID, 'ev_docurls', single); 
-							$postAfter = get_post_meta($post->ID, 'ev_documentation_post', single); 
-							if ($postBefore) { ?>
-								<li><strong>Invitation:</strong> <?php echo '<a href="' . $postBefore . '" title="Eventbrite">Invitation Post</a>'; ?></li>
-							<?php }
-							if ($docurls) { ?>
-								<li><strong>Documentation:</strong> <?php echo '<a href="' . $docurls . '" title="Documentation Page">Documentation</a>'; ?></li>
-							<?php }
-							if ($postAfter) { ?>
-								<li><strong>Post Documentation:</strong> <?php echo '<a href="' . $postAfter . '" title="Post Documentation">Post Documentation</a>'; ?></li>
-							<?php }
-						?>
 
 						<?php if( eo_reoccurs() ){ 			
 							//Event reoccurs - display dates. 
@@ -129,12 +90,54 @@ The template was taken from
 							 endif;
 							} ?>
 					</ul>
+					<!-- Participation -->
+					<?php 
+						$postBefore = get_post_meta($post->ID, 'ev_invitation_post', single); 
+						$github = get_post_meta($post->ID, 'ev_github_repo', single); 
+						$etherpad = get_post_meta($post->ID, 'ev_etherpad', single); 
+						$eventbrite = get_post_meta($post->ID, 'ev_eventbrite_event', single); 
+						
+						if ($github or $etherpad or $postBefore) { ?>
+							<h4>For Participants</h4>
+							<?php if($github) {
+								$str_postbefore = '';
+								if($postBefore) {
+									$str_postbefore = ' and our <a href="' . $postBefore . '" title="Invitation Post">invitation post</a>';
+								}
+								echo 'You can find a detailed description in the <a href="' . $github . '" title="GitHub">GitHub Repository' . $str_postbefore . '</a>.';
+							}
+							if($eventbrite) {
+								echo ' Registration is done via <a href="' . $eventbrite . '" title="Eventbrite">Eventbrite</a>.';
+							}
+							if($etherpad) {
+								echo ' During and before the event we use an <a href="' . $etherpad . '" title="Etherpad">Etherpad</a>.';
+							} ?>
+						<?php }
+					?>
+					
+					<!-- content -->				
 					<div class="entry-content">
-					<h4>Description</h4>
+						<h4>Description</h4>
 						<?php the_content(); ?>
 					</div>
+	
+					<!-- documentation -->
+					<?php 
+						$docurls = get_post_meta($post->ID, 'ev_docurls', single); 
+						$postAfter = get_post_meta($post->ID, 'ev_documentation_post', single); 
+						if ($docurls or $postAfter) { ?>
+							<h4>Documentation</h4>
+							<ul>
+								<?php if ($docurls) {
+									echo '<li><a href="' . $docurls . '" title="Documentation Page">Website</a></li>';
+								}
+								if ($postAfter) {
+									echo '<li><a href="' . $postAfter . '" title="Post Documentation">Past Event Blog</a></li>';
+								} ?>
+							</ul>
+						<?php }
+					?>
 				</div>
-
 
 				<!-- Does the event have a venue? -->
 				<?php 
@@ -157,7 +160,6 @@ The template was taken from
 				<?php get_template_part('templates/shariff'); ?>
 				<?php get_template_part('templates/printfriendly'); ?>
 			</div>
-			<?php get_template_part('templates/comments'); ?>
 		</article>
 	<?php endwhile; ?>
 </div>
